@@ -77,6 +77,11 @@
             sites."localhost" = {
               settings = { };
               package = pkgs-unstable.wordpress;
+              extraConfig = ''
+                if( strpos( $_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false ) {
+                  $_SERVER['HTTPS'] = 'on';
+                }
+              '';
 
               themes = {
                 inherit varia-wpcom dyad hever;

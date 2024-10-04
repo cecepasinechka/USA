@@ -66,6 +66,17 @@
             };
             installPhase = "mkdir -p $out; cp -R * $out/";
           };
+
+          ml-slider = pkgs.stdenv.mkDerivation rec {
+            name = "ml-slider";
+            version = "3.91.0";
+            src = pkgs.fetchzip {
+              url = "https://downloads.wordpress.org/plugin/ml-slider.3.91.0.zip";
+              hash = "sha256-CUqRBED+zis5XX2EE/LI2QxGOTWdo6q057B4Wd+a100=";
+            };
+            installPhase = "mkdir -p $out; cp -R * $out/";
+          };
+
           pkgs-unstable = import nixpkgs-unstable {
             system = "x86_64-linux";
           };
@@ -85,6 +96,10 @@
 
               themes = {
                 inherit varia-wpcom dyad hever;
+              };
+
+              plugins = {
+                inherit ml-slider;
               };
             };
 

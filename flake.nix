@@ -92,6 +92,10 @@
                 if( strpos( $_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false ) {
                   $_SERVER['HTTPS'] = 'on';
                 }
+
+                // https://developer.wordpress.org/advanced-administration/before-install/development/#two-wordpresses-one-database
+                define('WP_HOME',  "https://{$_SERVER['HTTP_HOST']}");
+                define('WP_SITEURL', "https://{$_SERVER['HTTP_HOST']}");
               '';
 
               themes = {

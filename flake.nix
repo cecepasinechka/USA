@@ -59,10 +59,10 @@
           };
           varia-wpcom = pkgs.stdenv.mkDerivation rec {
             name = "varia-wpcom";
-            version = "1.6.33";
+            version = "1.6.35";
             src = pkgs.fetchzip {
               url = "https://public-api.wordpress.com/rest/v1/themes/download/varia.zip";
-              hash = "sha256-Yw6KmldMK/gG3wR6rFZxDA+x0PVlha0yLchoTz97b0Q=";
+              hash = "sha256-V4YsrTirJSNL9v6EWs3MdI9SYPCsOMAkOzN6/kmjW4k=";
             };
             installPhase = "mkdir -p $out; cp -R * $out/";
           };
@@ -73,6 +73,16 @@
             src = pkgs.fetchzip {
               url = "https://downloads.wordpress.org/plugin/ml-slider.3.91.0.zip";
               hash = "sha256-CUqRBED+zis5XX2EE/LI2QxGOTWdo6q057B4Wd+a100=";
+            };
+            installPhase = "mkdir -p $out; cp -R * $out/";
+          };
+
+          site-kit = pkgs.stdenv.mkDerivation rec {
+            name = "site-kit";
+            version = "1.141.0";
+            src = pkgs.fetchzip {
+              url = "https://downloads.wordpress.org/plugin/google-site-kit.1.141.0.zip";
+              hash = "sha256-gUM171SPBH2eT/Oj5BHqc4+w69HqLDStNnYzhKVUYys=";
             };
             installPhase = "mkdir -p $out; cp -R * $out/";
           };
@@ -103,7 +113,7 @@
               };
 
               plugins = {
-                inherit ml-slider;
+                inherit ml-slider site-kit;
               };
             };
 

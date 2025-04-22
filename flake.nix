@@ -62,7 +62,7 @@
             version = "1.6.35";
             src = pkgs.fetchzip {
               url = "https://public-api.wordpress.com/rest/v1/themes/download/varia.zip";
-              hash = "sha256-V4YsrTirJSNL9v6EWs3MdI9SYPCsOMAkOzN6/kmjW4k=";
+              hash = "sha256-KmCX3XH9nUKpsizMSwUhF6i7XicsAFitR97XDnm81pE=";
             };
             installPhase = "mkdir -p $out; cp -R * $out/";
           };

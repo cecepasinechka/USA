@@ -44,7 +44,7 @@
             version = "1.5.30";
             src = pkgs.fetchzip {
               url = "https://public-api.wordpress.com/rest/v1/themes/download/hever.zip";
-              hash = "sha256-3Ca2HFRuqyf7qCuEsTyOnOdqW+OI7NToY9EJpV8WIow=";
+              hash = "sha256-k6IiiGgN/PYTL7E4ND38pqKrAV7f4jXeAP+NZN91i0Y=";
             };
             installPhase = "mkdir -p $out; cp -R * $out/";
           };
